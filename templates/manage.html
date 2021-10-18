@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/manage.js') }}"></script>
+    <script>
+        setVal("{{genre}}")
+    </script>
+</head>
+<body>
+
+    <div class="containerload" style="display: none;" id="load">
+        <div class="load">
+            <h1>Loading</h1>
+            <div class="lds-ring"><div></div></div>
+        </div>
+    </div>
+
+    <div class="mainContainer" id="all">
+        <div id="mySidenav" class="sidenav">
+            <div class="infoNav">
+                <img src="{{logoPNG}}" class="logoUser">
+                <div class="text">
+                    <p>{{username}}</p>
+                    <p>{{numberTracks}} Tracks</p>
+                </div>
+            </div>
+            <hr class="navHR">
+            <div class="topSideNav">
+                <a class="title">Library</a>
+                <a onclick="switchWindow('user')" class="active" id="trackss">My tracks</a>
+                <a onclick="switchWindow('daily')" id="dailys">Daily Mix</a>
+            </div>
+            <hr class="navHR">
+            <div class="downNav">
+                <a href="#" class="title">Settings</a>
+                <a onclick="switchWindow('options')" id="optionss">Options</a>
+            </div>
+        </div>
+    
+        <div class="topNav">
+            <div class="leftTop">
+                <div class="imgTop">
+                    <img src="../static/img/logo.png">    
+                </div>
+                <div class="textTop">
+                    <h1>My tracks</h1>
+                    <p>By DailyMix</p>
+                    <p>{{numberTracks}} Tracks</p>
+                </div>
+            </div>
+            <div class="rightTop">
+                <a onclick="newMix()">create new mix</a>
+            </div>
+        </div>
+
+        <div class="trackContainer" id="big">
+            <div class="divCont">
+                <div class="menu">
+                    <div class="left">
+                        <div class="enrobe">
+                            <input type="checkbox" id='random' checked>
+                            <p id="counter">0</p>
+                        </div>
+                        <div class="enrobe" id="trash" style="display: none;">
+                            <a onclick="deleteTracks()"><img src="../static/img/trash.png" class="bin"></a>  
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="info">
+                    <div class="label">
+                        <p>#</p>
+                        <p>TITLE</p>
+                        <p>ARTIST</p>
+                        <p>ALBUM</p>
+                        <p>DURATION</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="trackContainerUser" id="DailyUser">
+                {% for item in idUser %}
+                <div id="{{trackidUser[item]}}">
+                    <div class="track">
+                        <div class="deb">
+                            <input type="checkbox" id="{{trackidUser[item]}}" onclick="checkboxClicked(this)">
+                            <img src='../static/img/logo.png' class="littleLogo">
+                            <p>{{item}}</p>
+                        </div>
+                        <p>{{trackUser[item]}}</p>
+                        <p>{{artistUser[item]}}</p>
+                        <p>{{albumUser[item]}}</p>
+                        <p>{{durationUser[item]}}</p>
+                    </div>
+                    <hr style="border-color: #707070;">
+                </div>
+                {% endfor %}
+                <div class="endpad"></div>
+            </div>
+
+            <div class="trackContainerDaily" style="display: none;" id="DailyCont">
+                {% for item in idDaily %}
+                <div id="{{trackidDaily[item]}}">
+                    <div class="track">
+                        <div class="deb">
+                            <input type="checkbox" id="{{trackidDaily[item]}}" onclick="checkboxClicked(this)">
+                            <img src='../static/img/logo.png' class="littleLogo">
+                            <p>{{item}}</p>
+                        </div>
+                        <p>{{trackDaily[item]}}</p>
+                        <p>{{artistDaily[item]}}</p>
+                        <p>{{albumDaily[item]}}</p>
+                        <p>{{durationDaily[item]}}</p>
+                    </div>
+                    <hr style="border-color: #707070;">
+                </div>
+                {% endfor %}
+                <div class="endpad"></div>
+            </div>
+        </div>
+
+        <div class="optionsDiv" style="display: none;" id="optionsDiv">
+            <div class="optionsTitle">
+                <a class="titleDisc">Discovery</a>
+                <form id="formID" class="formOpt">
+                    <label for="vehicle1">Enable Discovery</label><br>
+                </form>
+            </div>
+
+        </div>
+    </div>
+   
+</body>
+
+</html>

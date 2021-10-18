@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/styleHome.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/home.js') }}"></script>
+    <script>
+        setVal("{{login}}")
+    </script>
+</head>
+<body>
+    <section id="top">
+        <div class="mainContainer">
+            <nav class="nav">
+                <div class="nav-left">
+                    <ul>
+                        <li><a class="active" href="#">DailyMix</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <ul>
+                        <li><a class="info" onclick="redirect()">MyMix</a></li>
+                        <li><a href="#bottom" class="info">Infos</a></li>
+                        <li><a class="info" onclick="login()" id="login">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="topDiv">
+                <h1 class="title">CREATE YOUR DREAM DAILY MIX FOR DEEZER</h1>
+                <p class="subtitle">Machine learning will generate playlists with your dream tracks and more, let DailyMix do the job !</p>
+                <button class="btn" onclick="redirect()">Start now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="bottom">
+        <div class="topDiv">
+            <h1 class="title">How is it working</h1>
+            <p class="subtitle">We analyze multiple data from tracks to predict your best match</p>
+        </div>
+        <div class="cardContainer">
+            <div class="card">
+                <img src="../static/img/bpm.png">
+                <div class="txt">
+                    <a class="titleCard">BPM</a>
+                    <a class="texteCard">Use the speed of your tracks and the rythme </a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../static/img/disk.png">
+                <div class="txt">
+                    <a class="titleCard">Artists</a>
+                    <a class="texteCard">Get all similar artist of your favorites ones</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../static/img/mic.png">
+                <div class="txt">
+                    <a class="titleCard">Genre</a>
+                    <a class="texteCard">Use the different genre you like to propose you more</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../static/img/eye.png">
+                <div class="txt">
+                    <a class="titleCard">Discvoery</a>
+                    <a class="texteCard">Will show you genre you never listened to !</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <a>DailyMix</a>
+        <a class="author" href="https://github.com/NotBlue-Dev">Made by Not<span>Blue</span></a>
+    </div>
+</body>
+</html>
