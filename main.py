@@ -31,5 +31,3 @@ Session(app)
 
 if __name__ == '__main__':
     app.run()
-
-# CSS HOME + REDIRACTION LOGIn
