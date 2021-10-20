@@ -8,7 +8,7 @@ main = Blueprint('main', __name__, template_folder='templates')
 
 @main.route('/', methods=['GET'])
 def default():
-    # TEMP THIS AUTO LOGIN YOU, NEED TO BE REPLACE WITH A BUTTON
+
     logged = True
     
     if not session.get("deezerID"):
