@@ -1,13 +1,13 @@
 # DailyMix-Wish
-Deezer Daily Mix but made by Wish
+Deezer Daily Mix but it suck
 
 School Project
 Constraint:
 
-Use DB and relation betwen tables
-Use Python Flask
+DB and relation between tables
+Python Flask
 
-Acces : http://localhost:5000/
+Access : http://localhost:5000/
 
 First load is REALLY long don't worry
 
