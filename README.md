@@ -1,5 +1,5 @@
 # DailyMix-Wish
-Deezer Daily Mix but it suck
+Deezer Daily Mix
 
 School Project
 Constraint:
